@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/style.css">
+    <title>base64 e Cifra de César</title>
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <video autoplay muted loop id="video">
+        <source src="img/numeros.mp4" type="video/mp4">
+    </video>
+
+    <div id="principal">
+        <div id="entrada">
+            <input type="text" name="vazio" id="left" placeholder="Entrada">
+        </div>
+        
+        <div id="select">
+            <select name="select" id="selectCode" onchange="tipoDeCodificacao()">
+                <option value="vazio">Selecione</option>
+                <option value="base64">base64</option>
+                <option value="cifraDeCesar">Cifra de César</option>
+            </select>
+            <button id="buttonD" style="display:none;" onclick="diminuir()">-</button>
+            <input type="number" name="shift" value="0" id="shift" readonly style="display:none;">
+            <button id="buttonA" style="display:none;" onclick="aumentar()">+</button>
+        </div>
+                
+        <div id="radio">
+            <input type="radio" name="vazio" oninput="codificarBotao()" checked><p>codificar</p>
+            <input type="radio" name="vazio" oninput="decodificarBotao()"><p>decodificar</p>
+        </div>
+        
+        <div id="button">
+            <button id="codificar" onclick="codificar()">Codificar Mensagem!</button>
+            <button id="decodificar" onclick="decodificar()" style="display:none;">Decodificar Mensagem!</button>
+        </div>
+
+        <div id="saida">
+            <input type="text" name="vazio" id="right" placeholder="Saída" readonly>
+        </div>
+    </div>
+</body>
+</html>
