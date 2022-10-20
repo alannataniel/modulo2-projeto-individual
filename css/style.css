@@ -56,13 +56,13 @@ input::-webkit-inner-spin-button {
 input[type=number] {
     -moz-appearance: textfield;
 }
-#buttonD {
+#buttonDiminuir {
     margin-left: 10px;
     padding: 5px;
     border-radius: 10px 0 0 10px;
     border-right: 0;
 }
-#buttonA {
+#buttonAumentar {
     padding: 5px;
     border-radius: 0 10px 10px 0;
     border-left: 0;
