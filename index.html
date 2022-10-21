@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="css/style.css">
     <title>base64 e Cifra de César</title>
     <script src="js/script.js"></script>
@@ -24,19 +25,19 @@
                 <option value="base64">base64</option>
                 <option value="cifraDeCesar">Cifra de César</option>
             </select>
-            <button id="buttonDiminuir" style="display:none;" onclick="diminuir()">-</button>
-            <input type="number" name="shift" value="0" id="shift" readonly style="display:none;">
-            <button id="buttonAumentar" style="display:none;" onclick="aumentar()">+</button>
+            <button id="buttonDiminuir" onclick="diminuir()">-</button>
+            <input type="number" name="shift" value="0" id="shift" readonly>
+            <button id="buttonAumentar" onclick="aumentar()">+</button>
         </div>
                 
         <div id="radio">
-            <input type="radio" name="vazio" oninput="codificarBotao()" checked><p>codificar</p>
-            <input type="radio" name="vazio" oninput="decodificarBotao()"><p>decodificar</p>
+            <div><input type="radio" name="vazio" oninput="codificarBotao()" checked><p>codificar</p></div>
+            <div><input type="radio" name="vazio" oninput="decodificarBotao()"><p>decodificar</p></div>
         </div>
         
         <div id="button">
             <button id="codificar" onclick="codificar()">Codificar Mensagem!</button>
-            <button id="decodificar" onclick="decodificar()" style="display:none;">Decodificar Mensagem!</button>
+            <button id="decodificar" onclick="decodificar()">Decodificar Mensagem!</button>
         </div>
 
         <div id="saida">
