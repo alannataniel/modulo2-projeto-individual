@@ -1,6 +1,6 @@
 // esconde ou mostra o Deslocamento
 function tipoDeCodificacao() {
-  var x = document.getElementById("selectCode").value;
+  let x = document.getElementById("selectCode").value;
   if (x === "vazio") {
     document.getElementById("shift").style.display = "none";
     document.getElementById("buttonDiminuir").style.display = "none";
@@ -19,21 +19,21 @@ function tipoDeCodificacao() {
 }
 // botão aumenta Deslocamento da Cifra de César
 function aumentar() {
-  var shift = document.getElementById("shift").value;
+  let shift = document.getElementById("shift").value;
   shift = parseInt(shift) + 1;
   document.getElementById("shift").value = shift;
 }
 // botão diminui Deslocamento da Cifra de César
 function diminuir() {
-  var shift = document.getElementById("shift").value;
+  let shift = document.getElementById("shift").value;
   shift = parseInt(shift) - 1;
   document.getElementById("shift").value = shift;
 }
 // chamada de função para cada tipo de codificação e mensagens de avisos
 function codificar() {
-  var entrada64 = document.getElementById("left").value;
-  var entradaCesar = document.getElementById("left").value;
-  var x = document.getElementById("selectCode").value;
+  let entrada64 = document.getElementById("left").value;
+  let entradaCesar = document.getElementById("left").value;
+  let x = document.getElementById("selectCode").value;
   if (x === "vazio") {
     alert("Escolha um tipo de codificação!");
   }
@@ -52,9 +52,9 @@ function codificar() {
 }
 // chamada de função para cada tipo de codificação e mensagens de avisos
 function decodificar() {
-  var entrada64 = document.getElementById("left").value;
-  var entradaCesar = document.getElementById("left").value;
-  var x = document.getElementById("selectCode").value;
+  let entrada64 = document.getElementById("left").value;
+  let entradaCesar = document.getElementById("left").value;
+  let x = document.getElementById("selectCode").value;
   if (x === "vazio") {
     alert("Escolha um tipo de codificação!");
   }
@@ -76,7 +76,7 @@ function codificarBotao() {
   document.getElementById("codificar").style.display = "inline";
   document.getElementById("decodificar").style.display = "none";
   // facilitador na usabilidade quando se troca de codificar para decodificar ou vice-versa
-  var shift = document.getElementById("shift").value;
+  let shift = document.getElementById("shift").value;
   if (shift < 0) {
     shift = Math.abs(shift);
     document.getElementById("shift").value = shift;
@@ -87,7 +87,7 @@ function decodificarBotao() {
   document.getElementById("decodificar").style.display = "inline";
   document.getElementById("codificar").style.display = "none";
   // facilitador na usabilidade quando se troca de codificar para decodificar ou vice-versa
-  var shift = document.getElementById("shift").value;
+  let shift = document.getElementById("shift").value;
   if (shift > 0) {
     shift = -Math.abs(shift);
     document.getElementById("shift").value = shift;
@@ -98,17 +98,17 @@ function decodificarBotao() {
 }
 // codificação base64
 function base64Codificar(entrada64) {
-  var encoded = window.btoa(entrada64);
+  let encoded = window.btoa(entrada64);
   return document.getElementById("right").value = encoded;
 }
 // decodificação base64
 function base64Decodificar(entrada64) {
-  var decoded = window.atob(entrada64);
+  let decoded = window.atob(entrada64);
   return document.getElementById("right").value = decoded;
 }
 // codificação e decodificação Cifra de César
-var cifraDeCesar = (entradaCesar) => {
-  var decoded1 = {
+let cifraDeCesar = (entradaCesar) => {
+  let decoded1 = {
     a: 10, A: 11, b: 12, B: 13, c: 14, C: 15,
     d: 16, D: 17, e: 18, E: 19, f: 20, F: 21,
     g: 22, G: 23, h: 24, H: 25, i: 26, I: 27,
@@ -121,7 +121,7 @@ var cifraDeCesar = (entradaCesar) => {
     
     1: 63, 2: 64, 3: 65, 4: 66, 5: 67, 6: 68, 7: 69, 8: 70, 9: 71, 0: 72
   }
-  var decoded2 = {
+  let decoded2 = {
     10: 'a', 11: 'A', 12: 'b', 13: 'B', 14: 'c', 15: 'C',
     16: 'd', 17: 'D', 18: 'e', 19: 'E', 20: 'f', 21: 'F',
     22: 'g', 23: 'G', 24: 'h', 25: 'H', 26: 'i', 27: 'I',
@@ -135,12 +135,12 @@ var cifraDeCesar = (entradaCesar) => {
     63: 1, 64: 2, 65: 3, 66: 4, 67: 5, 68: 6, 69: 7, 70: 8, 71: 9, 72: 0
   }
 
-  var decipher2 = '';
+  let decipher2 = '';
   
-  for (var i = 0 ; i < entradaCesar.length; i++) {
+  for (let i = 0 ; i < entradaCesar.length; i++) {
     //entradaCesar = entradaCesar.replace(/[^a-zA-Z0-9]/, '');
-    var shift = document.getElementById("shift").value;
-    var decipher1 = decoded1[entradaCesar[i]];
+    let shift = document.getElementById("shift").value;
+    let decipher1 = decoded1[entradaCesar[i]];
 
     decipher1 = decipher1 + (parseInt(shift) % 63 * 2);
 
